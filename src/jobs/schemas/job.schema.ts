@@ -2,32 +2,17 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import * as softDelete from 'soft-delete-plugin-mongoose';
 
-export type UserDocument = HydratedDocument<User>;
+export type JobDocument = HydratedDocument<Job>;
 
 @Schema({
   timestamps: true,
 })
-export class User {
-  @Prop({ required: true })
-  email: string;
-
-  @Prop({ required: true })
-  password: string;
-
+export class Job {
   @Prop()
   name: string;
 
   @Prop()
-  phone: string;
-
-  @Prop()
-  age: number;
-
-  @Prop()
-  gender: string;
-
-  @Prop()
-  address: string;
+  skills: string;
 
   @Prop({ type: Object })
   company: {
@@ -36,10 +21,25 @@ export class User {
   };
 
   @Prop()
-  role: string;
+  location: string;
 
   @Prop()
-  refreshToken: string;
+  salary: string;
+
+  @Prop()
+  level: string;
+
+  @Prop()
+  description: string;
+
+  @Prop()
+  startDate: Date;
+
+  @Prop()
+  endDate: string;
+
+  @Prop()
+  isActive: boolean;
 
   @Prop({ type: Object })
   createdBy: {
@@ -58,8 +58,9 @@ export class User {
     _id: mongoose.Schema.Types.ObjectId;
     email: string;
   };
+
   @Prop()
   createdAt: Date;
 }
 
-export const UserSchema = SchemaFactory.createForClass(User);
+export const JobSchema = SchemaFactory.createForClass(Job);
