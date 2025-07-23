@@ -12,7 +12,7 @@ export class Job {
   name: string;
 
   @Prop()
-  skills: string;
+  skills: string[];
 
   @Prop({ type: Object })
   company: {
@@ -24,7 +24,7 @@ export class Job {
   location: string;
 
   @Prop()
-  salary: string;
+  salary: number;
 
   @Prop()
   level: string;
@@ -36,9 +36,9 @@ export class Job {
   startDate: Date;
 
   @Prop()
-  endDate: string;
+  endDate: Date;
 
-  @Prop()
+  @Prop({ type: Boolean, default: true })
   isActive: boolean;
 
   @Prop({ type: Object })

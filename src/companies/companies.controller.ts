@@ -27,7 +27,7 @@ export class CompaniesController {
   }
 
   @Get()
-  @ResponseMessage('Fetch list company')
+  @ResponseMessage('Fetch list companys')
   findAll(
     @Query('current') currentPage: string, //const currentPage:string=req.query.page(node)
     @Query('pageSize') limit: string,
@@ -38,11 +38,13 @@ export class CompaniesController {
   }
 
   @Get(':id')
+  @ResponseMessage('Fetch a company')
   findOne(@Param('id') id: string) {
     return this.companiesService.findOne(id);
   }
 
   @Patch(':id')
+  @ResponseMessage('Update a company')
   update(
     @Param('id') id: string,
     @Body() updateCompanyDto: UpdateCompanyDto,
@@ -52,6 +54,7 @@ export class CompaniesController {
   }
 
   @Delete(':id')
+  @ResponseMessage('delete a company')
   remove(@Param('id') id: string, @User() user: IUser) {
     return this.companiesService.remove(id, user);
   }
