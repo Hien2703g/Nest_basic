@@ -12,6 +12,10 @@ moogo_hook deleted_soft: https://github.com/nour-karoui/mongoose-soft-delete/blo
 
 Api query_params:https://www.npmjs.com/package/api-query-params
 
+multi file:
+https://docs.nestjs.com/techniques/file-upload#file-validation
+https://stackoverflow.com/questions/73824060/how-can-i-validate-a-file-type-using-nestjs-pipes-and-filetypevalidator
+
 #####
 
 //valida data
